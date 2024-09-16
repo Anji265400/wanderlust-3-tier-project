@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   mongodb:
-    container_name: mongo
+    container_name: mongoo
     image: mongo:latest
     volumes:
       - ./backend/data:/data
@@ -9,7 +9,7 @@ services:
       - "27017:27017"
 
   backend:
-    container_name: backend
+    container_name: backendd
     build: ./backend
     env_file:
       - ./backend/.env.sample
@@ -19,7 +19,7 @@ services:
       - mongodb
 
   frontend:
-    container_name: frontend
+    container_name: frontendd
     build: ./frontend
     env_file:
       - ./frontend/.env.sample
