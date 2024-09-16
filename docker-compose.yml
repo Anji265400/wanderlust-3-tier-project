@@ -6,7 +6,7 @@ services:
     volumes:
       - ./backend/data:/data
     ports:
-      - "27018:27018"
+      - "27017:27017"
 
   backend:
     container_name: backendd
@@ -14,7 +14,7 @@ services:
     env_file:
       - ./backend/.env.sample
     ports:
-      - "5001:5001"
+      - "5000:5000"
     depends_on:
       - mongodb
 
@@ -24,7 +24,7 @@ services:
     env_file:
       - ./frontend/.env.sample
     ports:
-      - "5174:5174"
+      - "5173:5173"
       
 volumes:
   data:
